@@ -50,20 +50,24 @@ body {
   min-height: auto;
 }
 
-@media (min-width: 768px) {
-  .snap-container {
-    height: calc(100vh - 4rem);
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-  }
+.snap-container {
+  height: calc(100dvh - 4rem);
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
 
-  .snap-panel {
-    min-height: calc(100vh - 4rem);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    display: flex;
-    align-items: center;
+.snap-panel {
+  min-height: calc(100dvh - 4rem);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snap-container {
+    scroll-behavior: auto;
   }
 }
 
