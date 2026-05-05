@@ -16,59 +16,89 @@ const aboutSchema = {
   pathname="/about"
   schema={aboutSchema}
 >
-  <section class="container-default py-14 md:py-16">
-    <h1 class="text-6xl font-bold text-[var(--secondary)]">Our Story</h1>
-    <p class="mt-8 max-w-6xl text-[20px] leading-snug text-[var(--muted)]">
-      This should be a short description of what we do. This should be a short
-      description of what we do. This should be a short description of what we
-      do. This should be a short description of what we do. This should be a
-      short description of what we do. This should be a short description of
-      what we do. This should be a short description of what we do. This should
-      be a short description of what we do. This should be a short description
-      of what we do. This should be a short description of what we do. This
-      should be a short description of what we do.
-    </p>
+  <div class="snap-container">
+    <section class="snap-panel">
+      <div class="container-default w-full">
+        <h1 class="text-5xl font-bold text-[var(--secondary)] md:text-6xl">
+          Our Story
+        </h1>
+        <p
+          class="mt-8 max-w-6xl text-[18px] leading-snug text-[var(--muted)] md:text-[20px]"
+        >
+          This should be a short description of what we do. This should be a
+          short description of what we do. This should be a short description of
+          what we do. This should be a short description of what we do. This
+          should be a short description of what we do. This should be a short
+          description of what we do. This should be a short description of what
+          we do.
+        </p>
+      </div>
+    </section>
 
-    <h2 class="mt-16 text-6xl font-bold text-[var(--secondary)]">
-      Our Mission
-    </h2>
-    <p class="mt-5 max-w-6xl text-[20px] leading-snug text-[var(--muted)]">
-      "Simple, user-friendly solutions to complex problems" This should be a
-      short description of what we do. This should be a short description of
-      what we do. This should be a short description of what we do.
-    </p>
+    <section class="snap-panel">
+      <div class="container-default w-full">
+        <h2 class="text-5xl font-bold text-[var(--secondary)] md:text-6xl">
+          Our Mission
+        </h2>
+        <p
+          class="mt-8 max-w-6xl text-[18px] leading-snug text-[var(--muted)] md:text-[20px]"
+        >
+          "Simple, user-friendly solutions to complex problems" This should be a
+          short description of what we do. This should be a short description of
+          what we do. This should be a short description of what we do.
+        </p>
+      </div>
+    </section>
 
-    <h2 class="mt-12 text-6xl font-bold text-[var(--secondary)]">Our Team</h2>
-    <div class="mt-9 grid gap-7 md:grid-cols-3">
-      <article>
-        <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
-        <h3 class="mt-4 text-4xl font-semibold text-[var(--accent)]">
-          Anusha Shekhar
-        </h3>
-        <p class="text-4xl font-semibold text-[var(--accent)]">Co-Founder</p>
-      </article>
-      <article>
-        <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
-        <h3 class="mt-4 text-4xl font-semibold text-[var(--accent)]">
-          Aakarsh Shekhar
-        </h3>
-        <p class="text-4xl font-semibold text-[var(--accent)]">Co-Founder</p>
-      </article>
-      <article>
-        <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
-        <h3 class="mt-4 text-4xl font-semibold text-[var(--accent)]">
-          Jayden Markwell
-        </h3>
-        <p class="text-4xl font-semibold text-[var(--accent)]">Co-Founder</p>
-      </article>
-    </div>
-    <div class="mt-12 flex justify-end">
-      <a
-        class="focus-outline inline-block rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-[var(--accent-contrast)]"
-        href="/contact"
-      >
-        Contact Us
-      </a>
-    </div>
-  </section>
+    <section class="snap-panel">
+      <div class="container-default w-full">
+        <h2 class="text-5xl font-bold text-[var(--secondary)] md:text-6xl">
+          Our Team
+        </h2>
+        <div class="mt-9 grid gap-7 md:grid-cols-3">
+          <article>
+            <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
+            <h3
+              class="mt-4 text-2xl font-semibold text-[var(--accent)] md:text-3xl"
+            >
+              Anusha Shekhar
+            </h3>
+            <p class="text-2xl font-semibold text-[var(--accent)] md:text-3xl">
+              Co-Founder
+            </p>
+          </article>
+          <article>
+            <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
+            <h3
+              class="mt-4 text-2xl font-semibold text-[var(--accent)] md:text-3xl"
+            >
+              Aakarsh Shekhar
+            </h3>
+            <p class="text-2xl font-semibold text-[var(--accent)] md:text-3xl">
+              Co-Founder
+            </p>
+          </article>
+          <article>
+            <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
+            <h3
+              class="mt-4 text-2xl font-semibold text-[var(--accent)] md:text-3xl"
+            >
+              Jayden Markwell
+            </h3>
+            <p class="text-2xl font-semibold text-[var(--accent)] md:text-3xl">
+              Co-Founder
+            </p>
+          </article>
+        </div>
+        <div class="mt-12 flex justify-end">
+          <a
+            class="focus-outline inline-block rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-[var(--accent-contrast)]"
+            href="/contact"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

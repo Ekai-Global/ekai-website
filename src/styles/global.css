@@ -46,6 +46,27 @@ body {
     sans-serif;
 }
 
+.snap-panel {
+  min-height: auto;
+}
+
+@media (min-width: 768px) {
+  .snap-container {
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .snap-panel {
+    min-height: calc(100vh - 4rem);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+  }
+}
+
 .container-default {
   margin-inline: auto;
   width: min(72rem, 100% - 2rem);
