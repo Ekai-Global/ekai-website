@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About Ekai Global",
+  description:
+    "Learn about Ekai Global, our mission, and the team behind our AI-native solutions.",
+};
+---
+
+<BaseLayout
+  title="About Us | Ekai Global"
+  description="Meet the team behind Ekai Global and learn our mission to deliver practical AI solutions with measurable business impact."
+  pathname="/about"
+  schema={aboutSchema}
+>
+  <section class="container-default py-14 md:py-16">
+    <h1 class="text-6xl font-bold text-[var(--secondary)]">Our Story</h1>
+    <p class="mt-8 max-w-6xl text-[20px] leading-snug text-[var(--muted)]">
+      This should be a short description of what we do. This should be a short
+      description of what we do. This should be a short description of what we
+      do. This should be a short description of what we do. This should be a
+      short description of what we do. This should be a short description of
+      what we do. This should be a short description of what we do. This should
+      be a short description of what we do. This should be a short description
+      of what we do. This should be a short description of what we do. This
+      should be a short description of what we do.
+    </p>
+
+    <h2 class="mt-16 text-6xl font-bold text-[var(--secondary)]">
+      Our Mission
+    </h2>
+    <p class="mt-5 max-w-6xl text-[20px] leading-snug text-[var(--muted)]">
+      "Simple, user-friendly solutions to complex problems" This should be a
+      short description of what we do. This should be a short description of
+      what we do. This should be a short description of what we do.
+    </p>
+
+    <h2 class="mt-12 text-6xl font-bold text-[var(--secondary)]">Our Team</h2>
+    <div class="mt-9 grid gap-7 md:grid-cols-3">
+      <article>
+        <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
+        <h3 class="mt-4 text-4xl font-semibold text-[var(--accent)]">
+          Anusha Shekhar
+        </h3>
+        <p class="text-4xl font-semibold text-[var(--accent)]">Co-Founder</p>
+      </article>
+      <article>
+        <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
+        <h3 class="mt-4 text-4xl font-semibold text-[var(--accent)]">
+          Aakarsh Shekhar
+        </h3>
+        <p class="text-4xl font-semibold text-[var(--accent)]">Co-Founder</p>
+      </article>
+      <article>
+        <div class="h-56 rounded-4xl bg-[#d2cec3]"></div>
+        <h3 class="mt-4 text-4xl font-semibold text-[var(--accent)]">
+          Jayden Markwell
+        </h3>
+        <p class="text-4xl font-semibold text-[var(--accent)]">Co-Founder</p>
+      </article>
+    </div>
+    <div class="mt-12 flex justify-end">
+      <a
+        class="focus-outline inline-block rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-[var(--accent-contrast)]"
+        href="/contact"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</BaseLayout>

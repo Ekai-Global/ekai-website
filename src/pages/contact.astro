@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionBlock from "../components/sections/SectionBlock.astro";
+import { siteConfig } from "../config/site";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Ekai Global",
+  url: `${siteConfig.siteUrl}/contact`,
+};
+---
+
+<BaseLayout
+  title="Contact Us | Ekai Global"
+  description="Get in touch with Ekai Global to discuss your AI strategy, automation goals, or custom solution needs."
+  pathname="/contact"
+  schema={contactSchema}
+>
+  <SectionBlock
+    heading="Contact Us"
+    description="Share what you are building and we will get back with next steps."
+  >
+    <form
+      class="card grid gap-4 p-6 md:grid-cols-2"
+      action={siteConfig.contactFormEndpoint}
+      method="POST"
+    >
+      <div class="space-y-2">
+        <label for="name" class="block text-sm font-medium">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+        />
+      </div>
+      <div class="space-y-2">
+        <label for="email" class="block text-sm font-medium">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+        />
+      </div>
+      <div class="space-y-2 md:col-span-2">
+        <label for="reason" class="block text-sm font-medium">Reason</label>
+        <input
+          id="reason"
+          name="reason"
+          type="text"
+          placeholder="Project idea, advisory, automation..."
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+        />
+      </div>
+      <div class="space-y-2 md:col-span-2">
+        <label for="message" class="block text-sm font-medium">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="focus-outline md:col-span-2 inline-flex w-fit rounded-md bg-[var(--accent)] px-5 py-3 font-semibold text-[var(--accent-contrast)] transition hover:opacity-90"
+      >
+        Send Message
+      </button>
+    </form>
+  </SectionBlock>
+</BaseLayout>

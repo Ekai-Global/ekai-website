@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionBlock from "../components/sections/SectionBlock.astro";
+import ServicesGrid from "../components/sections/ServicesGrid.astro";
+import { services } from "../config/site";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: services.map((service) => service.title).join(", "),
+  provider: {
+    "@type": "Organization",
+    name: "Ekai Global",
+  },
+};
+---
+
+<BaseLayout
+  title="Services | Ekai Global"
+  description="Explore Ekai Global services including AI product advisory, workflow automation, and custom AI solution delivery."
+  pathname="/services"
+  schema={serviceSchema}
+>
+  <SectionBlock
+    heading="Services"
+    description="We offer focused AI services designed to move from strategy to execution with speed and clarity."
+  >
+    <ServicesGrid />
+  </SectionBlock>
+
+  <SectionBlock
+    heading="How We Work"
+    description="Each engagement follows a simple model: define outcomes, build fast, validate quickly, and iterate with your team."
+  >
+    <ol class="grid gap-4 md:grid-cols-3">
+      <li class="card p-5">
+        <h3 class="text-lg font-semibold">1. Discover</h3>
+        <p class="mt-2 text-[var(--muted)]">
+          We map priorities, constraints, and data realities.
+        </p>
+      </li>
+      <li class="card p-5">
+        <h3 class="text-lg font-semibold">2. Build</h3>
+        <p class="mt-2 text-[var(--muted)]">
+          We develop and integrate a practical AI solution.
+        </p>
+      </li>
+      <li class="card p-5">
+        <h3 class="text-lg font-semibold">3. Scale</h3>
+        <p class="mt-2 text-[var(--muted)]">
+          We monitor outcomes and expand what works.
+        </p>
+      </li>
+    </ol>
+  </SectionBlock>
+</BaseLayout>

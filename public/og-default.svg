@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#F6F1E3" />
+  <rect x="58" y="58" width="1084" height="514" rx="28" fill="#0F3E5D" />
+  <rect x="130" y="130" width="940" height="370" rx="24" fill="#F6F1E3" />
+  <text x="152" y="270" fill="#123F5C" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">
+    Ekai Global
+  </text>
+  <text x="152" y="340" fill="#3F95AC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="600">
+    Turning Complexity Into Clarity
+  </text>
+</svg>

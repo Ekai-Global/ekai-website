@@ -1,43 +1,85 @@
-# Astro Starter Kit: Minimal
+# Ekai Global Website
+
+Static, SEO-first marketing website built with Astro and Tailwind CSS.
+
+## Tech Stack
+
+- Astro static output
+- Tailwind CSS v4 (via Vite plugin)
+- TypeScript strict config
+- ESLint + Prettier
+- Astro sitemap integration
+
+## Local Development
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Quality Checks
 
-## 🚀 Project Structure
+```sh
+npm run format:check
+npm run lint
+npm run astro -- check
+npm run build
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+  components/
+    sections/
+    ui/
+  config/
+    site.ts
+  layouts/
+    BaseLayout.astro
+  pages/
+    index.astro
+    about.astro
+    services.astro
+    contact.astro
+    privacy.astro
+  styles/
+    global.css
+public/
+  robots.txt
+  favicon.*
+  logo.svg
+  og-default.svg
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## SEO Features
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Unique title and description per page
+- Canonical URL per page
+- Open Graph and Twitter metadata
+- JSON-LD structured data (`Organization`, `WebSite`, `Service`, `AboutPage`, `ContactPage`)
+- Generated sitemap (`/sitemap-index.xml`)
+- `robots.txt` with sitemap reference
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Theme Behavior
 
-## 🧞 Commands
+- Light mode default baseline
+- Honors user system preference on first visit
+- Theme toggle in header
+- Preference persisted via `localStorage`
 
-All commands are run from the root of the project, from a terminal:
+## Deployment
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Deploy the repository to Cloudflare Pages, Netlify, or Vercel with:
 
-## 👀 Want to learn more?
+- Build command: `npm run build`
+- Output directory: `dist`
+- Node version: `>=22.12.0`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Launch Checklist
+
+- Replace placeholder contact form endpoint in `src/config/site.ts`
+- Set production `site` URL in `astro.config.mjs` if domain changes
+- Validate JSON-LD in Google Rich Results Test
+- Submit sitemap URL to Google Search Console
+- Verify robots and canonical URLs on production

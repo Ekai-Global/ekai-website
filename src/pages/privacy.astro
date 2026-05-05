@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionBlock from "../components/sections/SectionBlock.astro";
+
+const updatedOn = new Date().toISOString().split("T")[0];
+---
+
+<BaseLayout
+  title="Privacy Policy | Ekai Global"
+  description="Read the Ekai Global privacy policy to understand what data we collect and how we use it."
+  pathname="/privacy"
+>
+  <SectionBlock
+    heading="Privacy Policy"
+    description={`Last updated: ${updatedOn}`}
+  >
+    <div class="card space-y-6 p-6 text-[var(--muted)]">
+      <section>
+        <h2 class="text-lg font-semibold text-[var(--text)]">
+          Information We Collect
+        </h2>
+        <p class="mt-2">
+          We collect information you provide directly, such as your name, email
+          address, and project details submitted through our contact forms.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-lg font-semibold text-[var(--text)]">
+          How We Use Information
+        </h2>
+        <p class="mt-2">
+          We use submitted details to respond to inquiries, evaluate project
+          fit, and improve the quality of our services and website experience.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-lg font-semibold text-[var(--text)]">Data Sharing</h2>
+        <p class="mt-2">
+          We do not sell personal information. We may share data with trusted
+          service providers for website hosting, analytics, or communication
+          delivery.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-lg font-semibold text-[var(--text)]">Contact</h2>
+        <p class="mt-2">
+          For privacy-related questions, contact us at
+          <a
+            class="focus-outline underline decoration-[var(--accent)]"
+            href="mailto:hello@ekaiglobal.com"
+          >
+            hello@ekaiglobal.com
+          </a>.
+        </p>
+      </section>
+    </div>
+  </SectionBlock>
+</BaseLayout>
