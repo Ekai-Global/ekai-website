@@ -111,8 +111,8 @@ const schema = {
   <section class="container-default py-10">
     <h2 class="text-5xl font-bold text-[var(--secondary)]">Contact Us</h2>
     <form
+      data-stub-contact-form
       class="mt-5 grid gap-5 md:grid-cols-2"
-      action={siteConfig.contactFormEndpoint}
       method="POST"
     >
       <div>
@@ -124,7 +124,7 @@ const schema = {
           name="name"
           type="text"
           placeholder="Enter your name"
-          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2"
+          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         />
       </div>
       <div>
@@ -136,7 +136,7 @@ const schema = {
           name="email"
           type="email"
           placeholder="Enter your email"
-          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2"
+          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         />
       </div>
       <div>
@@ -146,7 +146,7 @@ const schema = {
         <select
           id="reason"
           name="reason"
-          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2"
+          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2 text-[var(--text)]"
         >
           <option>Value</option>
           <option>Advisory</option>
@@ -163,9 +163,36 @@ const schema = {
           name="message"
           rows="3"
           placeholder="Value"
-          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2"
+          class="focus-outline mt-1 w-full rounded-md border border-[#d5cebc] bg-[#f3efe3] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         ></textarea>
       </div>
+      <button
+        type="submit"
+        class="focus-outline md:col-span-2 inline-flex w-fit rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-[var(--accent-contrast)]"
+      >
+        Send Message
+      </button>
+      <p
+        data-form-status
+        class="hidden md:col-span-2 rounded-md bg-[var(--surface)] px-4 py-3 text-sm font-medium text-[var(--accent)]"
+      >
+        Thank you. Your message has been captured (stub). We will wire this to
+        email delivery next.
+      </p>
     </form>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  const forms = document.querySelectorAll("[data-stub-contact-form]");
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const status = form.querySelector("[data-form-status]");
+      if (status) {
+        status.classList.remove("hidden");
+      }
+      form.reset();
+    });
+  });
+</script>

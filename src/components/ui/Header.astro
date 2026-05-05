@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../../config/site";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const pathname = Astro.url.pathname;
 ---
@@ -9,7 +10,12 @@ const pathname = Astro.url.pathname;
 >
   <div class="container-default flex items-center justify-between gap-4 py-3">
     <a href="/" class="focus-outline flex items-center gap-3 text-lg font-bold">
-      <span class="h-9 w-9 rounded-sm bg-[var(--surface)]"></span>
+      <img
+        src="/logo-ekai.png"
+        alt="Ekai logo"
+        class="h-9 w-9 rounded-sm bg-[var(--surface)] object-cover"
+        loading="eager"
+      />
       <span class="text-[var(--primary-contrast)]">{siteConfig.name}</span>
     </a>
     <nav aria-label="Main navigation">
@@ -29,5 +35,6 @@ const pathname = Astro.url.pathname;
         }
       </ul>
     </nav>
+    <ThemeToggle />
   </div>
 </header>

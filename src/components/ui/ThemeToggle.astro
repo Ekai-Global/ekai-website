@@ -1,24 +1,25 @@
 <button
   id="theme-toggle"
   type="button"
-  class="focus-outline rounded-md border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-sm font-medium text-[var(--text)] transition hover:border-[var(--accent)]"
-  aria-label="Switch color theme"
+  class="focus-outline rounded-full border border-[var(--primary-contrast)]/20 bg-[var(--primary)] px-3 py-1 text-xs font-medium text-[var(--primary-contrast)]"
+  aria-label="Toggle dark mode"
+  aria-pressed="false"
 >
-  <span data-theme-label>Dark mode</span>
+  Dark mode
 </button>
 
 <script is:inline>
   const key = "theme";
   const root = document.documentElement;
   const button = document.getElementById("theme-toggle");
-  const label = button?.querySelector("[data-theme-label]");
 
   const applyTheme = (theme) => {
     const isDark = theme === "dark";
     root.classList.toggle("dark", isDark);
     root.dataset.theme = theme;
-    if (label) {
-      label.textContent = isDark ? "Light mode" : "Dark mode";
+    if (button) {
+      button.setAttribute("aria-pressed", String(isDark));
+      button.textContent = isDark ? "Light mode" : "Dark mode";
     }
   };
 

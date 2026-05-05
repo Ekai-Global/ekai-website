@@ -22,8 +22,8 @@ const contactSchema = {
     description="Share what you are building and we will get back with next steps."
   >
     <form
+      data-stub-contact-form
       class="card grid gap-4 p-6 md:grid-cols-2"
-      action={siteConfig.contactFormEndpoint}
       method="POST"
     >
       <div class="space-y-2">
@@ -33,7 +33,7 @@ const contactSchema = {
           name="name"
           type="text"
           required
-          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         />
       </div>
       <div class="space-y-2">
@@ -43,7 +43,7 @@ const contactSchema = {
           name="email"
           type="email"
           required
-          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         />
       </div>
       <div class="space-y-2 md:col-span-2">
@@ -53,7 +53,7 @@ const contactSchema = {
           name="reason"
           type="text"
           placeholder="Project idea, advisory, automation..."
-          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         />
       </div>
       <div class="space-y-2 md:col-span-2">
@@ -63,7 +63,7 @@ const contactSchema = {
           name="message"
           rows="6"
           required
-          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2"
+          class="focus-outline w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-[var(--text)] placeholder:text-[var(--muted)]"
         ></textarea>
       </div>
       <button
@@ -72,6 +72,27 @@ const contactSchema = {
       >
         Send Message
       </button>
+      <p
+        data-form-status
+        class="hidden md:col-span-2 rounded-md bg-[var(--background)] px-4 py-3 text-sm font-medium text-[var(--accent)]"
+      >
+        Thank you. Your message has been captured (stub). We will connect this
+        to Formspree next.
+      </p>
     </form>
   </SectionBlock>
 </BaseLayout>
+
+<script is:inline>
+  const forms = document.querySelectorAll("[data-stub-contact-form]");
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const status = form.querySelector("[data-form-status]");
+      if (status) {
+        status.classList.remove("hidden");
+      }
+      form.reset();
+    });
+  });
+</script>
